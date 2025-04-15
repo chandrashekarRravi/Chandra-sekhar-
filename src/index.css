@@ -1,0 +1,7 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Andika:ital,wght@0,400;0,700;1,400;1,700&family=Bebas+Neue&family=Oswald:wght@200..700&family=Poppins:wght@400;700&family=Press+Start+2P&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+:root {
+    font-family: "inter", sans-serif;
+}
