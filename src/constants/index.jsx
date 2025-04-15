@@ -188,7 +188,7 @@ export const SOCIAL_MEDIA_LINKS = [
     icon: <FaDiscord fontSize={25} className="hover:opacity-80" />,
   },
   {
-    href: "https://x.com/",
+    href: "https://www.instagram.com/chan.drashekar23/",
     icon: <FaInstagram fontSize={25} className="hover:opacity-80" />,
   },
   {
@@ -196,11 +196,11 @@ export const SOCIAL_MEDIA_LINKS = [
     icon: <FaXTwitter fontSize={25} className="hover:opacity-80" />,
   },
   {
-    href: "https://github.com/",
+    href: "https://github.com/chandrashekarRravi",
     icon: <FaGithub fontSize={25} className="hover:opacity-80" />,
   },
   {
-    href: "https://www.linkedin.com/",
+    href: "https://www.linkedin.com/in/chandra-shekar6366189346",
     icon: <FaLinkedin fontSize={25} className="hover:opacity-80" />,
   },
 ];
