@@ -46,7 +46,7 @@ export default NAVIGATION_LINKS;
 
 
 export const PROFILE = {
-  name: "ChandraShaker R",
+  name: "ChandraShekar R",
   info: "Front-End developer with a flair for graphic design.",
 };
 
