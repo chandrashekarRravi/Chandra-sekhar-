@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import logo from '../assets/logo.png';
 import { NAVIGATION_LINKS } from '../constants/index.jsx';
 
 const NavBar = () => {
     const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [isDropdownOpen, setDropdownOpen] = useState(false);
+    const dropdownTimeout = useRef(null);
 
     const toggleMobileMenu = () => {
         setMobileMenuOpen(!isMobileMenuOpen);
@@ -23,6 +25,18 @@ const NavBar = () => {
             });
         }
         setMobileMenuOpen(false);
+    };
+
+    // Desktop dropdown handlers with delay
+    const handleDropdownEnter = () => {
+        if (dropdownTimeout.current) clearTimeout(dropdownTimeout.current);
+        setDropdownOpen(true);
+    };
+    const handleDropdownLeave = () => {
+        dropdownTimeout.current = setTimeout(() => setDropdownOpen(false), 300);
+    };
+    const handleDropdownDownload = () => {
+        setDropdownOpen(false);
     };
 
     return (
@@ -49,6 +63,40 @@ const NavBar = () => {
                                         </a>
                                     </li>
                                 ))}
+                                {/* Resume Dropdown */}
+                                <li
+                                    className="relative"
+                                    onMouseEnter={handleDropdownEnter}
+                                    onMouseLeave={handleDropdownLeave}
+                                >
+                                    <button className="text-sm focus:outline-none text-white px-3 py-1 rounded hover:text-green-400">
+                                        Download Resume
+                                    </button>
+                                    {isDropdownOpen && (
+                                        <ul className="absolute left-0 mt-2 w-48 rounded-md shadow-lg z-50 bg-black/70">
+                                            <li>
+                                                <a
+                                                    href="/Frontend-Developer.pdf"
+                                                    download="Frontend-Developer.pdf"
+                                                    className="block px-4 py-2 text-white hover:bg-white/10 transition"
+                                                    onClick={handleDropdownDownload}
+                                                >
+                                                    Frontend Developer
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a
+                                                    href="/Full-Stack-developer.pdf"
+                                                    download="Full-Stack-developer.pdf"
+                                                    className="block px-4 py-2 text-white hover:bg-white/10 transition"
+                                                    onClick={handleDropdownDownload}
+                                                >
+                                                    Full Stack Developer
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    )}
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -88,6 +136,36 @@ const NavBar = () => {
                                     </a>
                                 </li>
                             ))}
+                            {/* Resume Dropdown for Mobile */}
+                            <li className="relative w-full flex justify-center">
+                                <details className="w-full flex flex-col items-center">
+                                    <summary className="block w-full text-xl font-semibold cursor-pointer text-white px-3 py-1 rounded text-center">
+                                        Download Resume
+                                    </summary>
+                                    <ul className="w-full rounded-md shadow-lg z-50 bg-black/70">
+                                        <li>
+                                            <a
+                                                href="/constants/Frontend-Developer.pdf"
+                                                download
+                                                className="block px-4 py-2 text-white hover:bg-white/10 transition text-center"
+                                                onClick={() => setMobileMenuOpen(false)}
+                                            >
+                                                Frontend Developer
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a
+                                                href="/constants/Full-Stack-developer.pdf"
+                                                download
+                                                className="block px-4 py-2 text-white hover:bg-white/10 transition text-center"
+                                                onClick={() => setMobileMenuOpen(false)}
+                                            >
+                                                Full Stack Developer
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </details>
+                            </li>
                         </ul>
                     )}
                 </div>

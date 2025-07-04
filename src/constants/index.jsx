@@ -17,7 +17,7 @@ import { TiHtml5 } from "react-icons/ti";
 import { TbBrandTailwind } from "react-icons/tb";
 import { BiLogoCss3 } from "react-icons/bi";
 import { TbBrandJavascript } from "react-icons/tb";
-
+import expressLogo from "../assets/expressjs-logo.png";
 
 import image1 from "../assets/project1.png";
 import image2 from "../assets/project2.png";
@@ -27,18 +27,20 @@ import image5 from "../assets/project5.png";
 import image6 from "../assets/project6.png";
 import image7 from "../assets/project7.jpeg";
 import image8 from "../assets/project8.jpeg";
+import IPO from "../assets/IPO.png"
 
 import user1 from "../assets/profile-pictures/user1.jpg";
 import user2 from "../assets/profile-pictures/user2.jpg";
 import user3 from "../assets/profile-pictures/user3.jpg";
 import user4 from "../assets/profile-pictures/user4.jpg";
+import { image, link } from "framer-motion/client";
 
 export const NAVIGATION_LINKS = [
   { label: "About", href: "#about" },
   { label: "Projects", href: "#projects" },
   { label: "Skills", href: "#skills" },
-  { label: "Award", href: "#award" },
-  { label: "Testimonials", href: "#testimonials" },
+  {/*{ label: "Award", href: "#award" },
+  { label: "Testimonials", href: "#testimonials" },*/},
   { label: "Contact", href: "#contact" },
 ];
 export default NAVIGATION_LINKS;
@@ -46,14 +48,14 @@ export default NAVIGATION_LINKS;
 
 
 export const PROFILE = {
-  name: "ChandraShekar R",
-  info: "Front-End developer with a flair for graphic design.",
+  name: "ChandraShaker R",
+  info: "Full Stack Developer with a flair for clean UI and responsive design, blending frontend creativity with robust backend architecture to build seamless web experiences..",
 };
 
 export const ABOUT = {
   text1:
     "Every line of code I write brings creativity and functionality together on the screen. ",
-  text2: "I am a frontend developer skilled in HTML, CSS, JavaScript, and ReactJS, with expertise in Bootstrap for creating responsive designs. I hold certifications in these technologies, showcasing my dedication to growth. In the next 2–3 years, I aspire to advance as a frontend engineer or explore opportunities as a UI/UX designer.A versatile tech enthusiast with a strong commitment to knowledge sharing and innovation.I wear multiple hats as where I focus on Learning Front-end development, and huframe-works engaging in in-depth discussions about the ever-evolving tech landscape.",
+  text2: "A full-stack web application built with the MERN stack for tracking, managing, and registering IPOs. Features include real-time IPO listings, admin dashboard with CRUD operations, broker comparison tools, and a community section. The app uses JWT-based authentication, RESTful APIs, and a fully responsive UI built with React, Bootstrap, and Tailwind CSS. Designed with scalability, clean architecture, and cross-device accessibility in mind.",
   //"Hello! I'm  Chandra Sehakr, a full-stack developer with a flair for graphic design. I thrive on crafting web experiences that are not only visually stunning but also highly functional and user-friendly. My passion for detail ensures that every project is polished and professional. Beyond coding, I'm an avid explorer of new cultures and cuisines. My curiosity drives me to stay on the cutting edge of technology and design trends, bringing innovative and practical solutions to every challenge. Whether I'm developing a sleek website or diving into the latest tech, I am dedicated to delivering excellence in every project.",
 };
 
@@ -66,34 +68,19 @@ export const PROJECTS = [
     link: " "
   },
   {
+    title: "IPO-Web-App-REST-API",
+    subtitle: "Built a full-stack IPO management platform with JWT-based role access, RESTful APIs using Express.js, and MongoDB schema validation.Designed 15+ reusable React components with responsive UI using Bootstrap and Tailwind CSS, ensuring optimized performance and clean workflows..",
+    image: IPO,
+    link: "",
+  },
+  {
     title: "E-commerce Platform",
     subtitle:
       "A full-stack e-commerce platform built with HTML, CSS, JAVASCRIPT, BOOTSTRAP.",
     image: image1,
     link: "https://chandrashekarrravi.github.io/CS-E-Commerce/"
   },
-  {
-    title: "ToDO List",
-    subtitle:
-      "A simple to-do list application built with  ReactJS and TailwindCSS.",
-    image: image2,
-  },
-  {
-    title: "Weather App",
-    subtitle:
-      "A weather dashboard application built with  ReactJS and TailwindCSS.",
-    image: image4,
-  }, {
-    title: "Progress Bar",
-    subtitle:
-      " A progress bar application built with HTML, CSS, and JavaScript.",
-    image: image3,
-  }, {
-    title: "Bites-LangingPage",
-    subtitle:
-      "  A landing page for a food delivery service built with HTML, CSS, and JavaScript.",
-    image: image5,
-  },
+
 
 ];
 
@@ -129,12 +116,32 @@ export const SKILLS = [
     experience: "1+ year",
   },
   {
-
+    icon: <FaNodeJs className="text-4xl lg:text-6xl text-green-700" />,
+    name: "Node.js",
+    experience: "1+ year",
+  },
+  {
+    icon: <img src={expressLogo} alt="Express.js" className="w-8 h-8 lg:w-12 lg:h-12 rounded-full bg-black" />,
+    name: "Express.js",
+    experience: "1+ year",
+  },
+  {
+    icon: <SiMongodb className="text-4xl lg:text-6xl text-green-500" />,
+    name: "MongoDB",
+    experience: "1+ year",
+  },
+  {
+    icon: <DiRedis className="text-4xl lg:text-6xl text-green-500" />,
+    name: "Mongoose",
+    experience: "1+ year",
+  },
+  {
+    icon: null,
     name: "C",
     experience: "1.5+ year",
   },
   {
-
+    icon: null,
     name: "DSA",
     experience: "1+ year",
   },
@@ -203,4 +210,9 @@ export const SOCIAL_MEDIA_LINKS = [
     href: "https://www.linkedin.com/in/chandra-shekar6366189346",
     icon: <FaLinkedin fontSize={25} className="hover:opacity-80" />,
   },
+  {
+    href: "https://www.linkedin.com/in/chandra-shekar6366189346",
+    icon: <FaLinkedin fontSize={25} className="hover:opacity-80" />,
+  },
 ];
+
